@@ -9,3 +9,6 @@ $ docker run -it --rm -p 3000:3000 \
     frontend:0.0.1
 
 ```
+
+Usamos um script como entrypoint para o nginx, esse script usa o gomplete para transformar um template em um arquivo json num contexto do nginx fixo
+daí no startup da app faço um fetch no endpoint e pego os valores.
