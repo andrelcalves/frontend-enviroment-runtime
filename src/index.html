@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <h1>Config</h1>
+    <p>Envs</p>
+    <p>
+        <pre id="codeArea">
+
+        </pre>
+    </p>
+
+</body>
+
+<script>
+    function loadData(url, cb) {
+        const req = new XMLHttpRequest();
+
+        req.onload = (e) => {
+            const obj = JSON.parse(req.response)
+            if (cb) {
+                cb(obj);
+            }
+        }
+
+        req.open("GET", url);
+        req.send();
+    }
+
+    const configHandle = (data) => {
+        const codeArea = document.getElementById("codeArea");
+        codeArea.innerHTML = JSON.stringify(data, null, 4);
+    }
+
+    loadData('/system-config/services.json', configHandle);
+
+</script>
+
+</html>
