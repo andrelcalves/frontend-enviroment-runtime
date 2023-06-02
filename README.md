@@ -1,5 +1,7 @@
 # frontend config
 
+_This solution was shared by *Alex Gamas*, friend of mine_
+
 ```
 $ docker build --tag=frontend:0.0.1 .
 
